@@ -1,0 +1,120 @@
+import type { WordItem, WordModule } from '../types'
+
+export const wordBank: WordItem[] = [
+  {
+    text: 'thank you',
+    difficulty: 'Beginner',
+    module: 'words',
+    syllables: ['thank', 'you'],
+    tips: ['Feel the tongue touch the upper teeth for “th”.', 'Slow down between syllables.'],
+  },
+  {
+    text: 'river',
+    difficulty: 'Beginner',
+    module: 'words',
+    syllables: ['ri', 'ver'],
+    tips: ['Keep the R sound relaxed.', 'Smile slightly for the “v” sound.'],
+  },
+  {
+    text: 'good morning',
+    difficulty: 'Beginner',
+    module: 'words',
+    syllables: ['good', 'morn', 'ing'],
+    tips: ['Make the “g” sound soft at the end.', 'Pause slightly between words.'],
+  },
+  {
+    text: 'coffee',
+    difficulty: 'Beginner',
+    module: 'words',
+    syllables: ['cof', 'fee'],
+    tips: ['Round your lips for the “cof”.', 'Keep the second syllable short.'],
+  },
+  {
+    text: 'meeting',
+    difficulty: 'Beginner',
+    module: 'words',
+    syllables: ['meet', 'ing'],
+    tips: ['Stretch the “ee” sound.', 'Drop the “g” softly if it helps.'],
+  },
+  {
+    text: 'one two three',
+    difficulty: 'Beginner',
+    module: 'numbers',
+    numeralCategory: 'cardinal',
+    syllables: ['one', 'two', 'three'],
+    tips: ['Push air for “th” in three.', 'Keep each number clear and separate.'],
+  },
+  {
+    text: 'ten thirty',
+    difficulty: 'Beginner',
+    module: 'numbers',
+    numeralCategory: 'cardinal',
+    syllables: ['ten', 'thir', 'ty'],
+    tips: ['Make the “th” sound with your tongue between teeth.', 'Light “r” sound in “thir”.'],
+  },
+  {
+    text: 'room three oh five',
+    difficulty: 'Beginner',
+    module: 'mix',
+    numeralCategory: 'nominal',
+    syllables: ['room', 'three', 'oh', 'five'],
+    tips: ['Round your lips for “room”.', 'Push air on “three”.'],
+  },
+  {
+    text: 'call me at eight',
+    difficulty: 'Beginner',
+    module: 'mix',
+    numeralCategory: 'cardinal',
+    syllables: ['call', 'me', 'at', 'eight'],
+    tips: ['Open the mouth for “call”.', 'Make a long smooth “eight”.'],
+  },
+  {
+    text: 'first second third',
+    difficulty: 'Beginner',
+    module: 'numbers',
+    numeralCategory: 'ordinal',
+    syllables: ['first', 'sec', 'ond', 'third'],
+    tips: ['Stress the ending sounds.', 'Keep each word short and clear.'],
+  },
+  {
+    text: 'once or twice',
+    difficulty: 'Beginner',
+    module: 'numbers',
+    numeralCategory: 'multiplicative',
+    syllables: ['once', 'or', 'twice'],
+    tips: ['Make the “w” in “twice” smooth.', 'Keep a small pause before “twice”.'],
+  },
+  {
+    text: 'wonderful',
+    difficulty: 'Intermediate',
+    module: 'words',
+    syllables: ['won', 'der', 'ful'],
+    tips: ['Hold the “der” syllable longer.', 'Keep breath steady.'],
+  },
+  {
+    text: 'enthusiasm',
+    difficulty: 'Intermediate',
+    module: 'words',
+    syllables: ['en', 'thu', 'si', 'asm'],
+    tips: ['Push air for the “th”.', 'Avoid merging “si” and “asm”.'],
+  },
+  {
+    text: 'entrepreneurship',
+    difficulty: 'Advanced',
+    module: 'words',
+    syllables: ['en', 'tre', 'pre', 'neur', 'ship'],
+    tips: ['Stress “neur” with clarity.', 'Keep syllables even.'],
+  },
+  {
+    text: 'responsibility',
+    difficulty: 'Advanced',
+    module: 'words',
+    syllables: ['re', 'spon', 'si', 'bil', 'i', 'ty'],
+    tips: ['Break the word into smaller chunks.', 'Emphasize “spon”.'],
+  },
+]
+
+export const getWordsByLevel = (level: WordItem['difficulty'], module?: WordModule) =>
+  wordBank.filter(
+    (word) => word.difficulty === level && (module ? word.module === module : true),
+  )
